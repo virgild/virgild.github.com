@@ -1,0 +1,25 @@
+"use strict";
+
+(function(app, window, $) {
+  app.FrontPage = React.createClass({displayName: "FrontPage",
+    getInitialState: function() {
+      return {};
+    },
+
+    render: function() {
+      return (
+        React.createElement("div", {className: "container"}, 
+          React.createElement("div", {className: "board"}, 
+            React.createElement("div", {className: "title"}, "virgild.github.io"), 
+            React.createElement("div", {className: "subtitle"}, "The recent works of virgild")
+          )
+        )
+      );
+    }
+  });
+
+  $(function() {
+    app.mountedPage = React.render(React.createElement(app.FrontPage), window.document.getElementById("page"));
+  });
+}(App, window, $));
+
